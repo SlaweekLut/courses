@@ -28,6 +28,12 @@
                         <div class="nav-menu__mobile-element"></div>
                     </button>
                 </div>
+                <nav class="nav-mobile">
+                    <a href="#" class="font-md font-bd nav-mobile__link">Course topics</a>
+                    <a href="#" class="font-md font-bd nav-mobile__link">What students say</a>
+                    <a href="#" class="font-md font-bd nav-mobile__link">Sign in</a>
+                    <a href="#" class="font-md font-bd nav-mobile__link btn nav-mobile__btn">Get started</a>
+                </nav>
             </div>
         </div>
     </header>
@@ -299,6 +305,23 @@
                 }
             }
         });
+
+        const burger = document.querySelector('.nav-menu__mobile-btn')
+        const navMenu = document.querySelector('.nav-mobile')
+
+        function open() {
+        burger.classList.toggle('open')
+        navMenu.classList.toggle('open')
+        }
+        function close() {
+        burger.classList.remove('open')
+        navMenu.classList.remove('open')
+        }
+
+        burger.addEventListener('click', open)
+        navMenu.addEventListener('wheel', close)
+        navMenu.addEventListener('touchmove', close)
+        navMenu.addEventListener('click', close)
     </script>
 </body>
 

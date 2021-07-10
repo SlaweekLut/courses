@@ -25,6 +25,11 @@ html {
   overflow-x: hidden;
 }
 
+body {
+  overflow-x: hidden;
+  position: relative;
+}
+
 .container {
   max-width: 1132px;
   width: 100%;
@@ -244,21 +249,22 @@ h5 {
   background: linear-gradient(44deg, #cd10ff 0%, #9f06ff 100%);
   display: none;
   margin-left: 25px;
+  z-index: 4;
 }
 
-.nav-menu__mobile-btn:hover .nav-menu__mobile-element:nth-child(1) {
+.nav-menu__mobile-btn.open .nav-menu__mobile-element:nth-child(1) {
   -webkit-transform: translateY(7px) rotate(45deg);
       -ms-transform: translateY(7px) rotate(45deg);
           transform: translateY(7px) rotate(45deg);
 }
 
-.nav-menu__mobile-btn:hover .nav-menu__mobile-element:nth-child(2) {
+.nav-menu__mobile-btn.open .nav-menu__mobile-element:nth-child(2) {
   -webkit-transform: scaleX(0);
       -ms-transform: scaleX(0);
           transform: scaleX(0);
 }
 
-.nav-menu__mobile-btn:hover .nav-menu__mobile-element:nth-child(3) {
+.nav-menu__mobile-btn.open .nav-menu__mobile-element:nth-child(3) {
   -webkit-transform: translateY(-7px) rotate(-45deg);
       -ms-transform: translateY(-7px) rotate(-45deg);
           transform: translateY(-7px) rotate(-45deg);
@@ -293,6 +299,41 @@ h5 {
 .nav-auth__btn {
   padding: 15px 30px;
   color: #fff;
+}
+
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: -30px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 110vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 3;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: rgba(0, 26, 73, 0.3);
+}
+
+.nav-mobile__link {
+  font-weight: bold;
+  color: #fff;
+  font-size: 24px;
+  padding: 20px 25px;
+}
+
+.nav-mobile.open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 @media (max-width: 991.98px) {
@@ -1115,6 +1156,25 @@ h5 {
 }
 
 @media (max-width: 479.98px) {
+  .footer-form {
+    padding: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background: transparent;
+  }
+  .footer-form__input {
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 20px 15px;
+    margin-bottom: 15px;
+    margin-left: 0;
+    width: 100%;
+  }
+  .footer-form__btn {
+    width: 100%;
+  }
   .footer-nav__help {
     margin-right: 20px;
   }
